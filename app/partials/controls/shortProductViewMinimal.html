@@ -1,0 +1,32 @@
+<div class="451qa_prod_item custom-short-product inline">
+    <a href="product/{{LineItem.Product.InteropID}}">
+        <figure ng-show="LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl" >
+            <img class="img=responsive" ng-src="{{LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl}}"/>
+        </figure>
+        <div class="empty" ng-hide="LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl">
+            <span class="fa empty"><i class="fa fa-camera"></i></span>
+        </div>
+    </a>
+    <div class="product-name"><div ng-bind-html="LineItem.Product.Name"></div></div>
+    <!--<p class="price">
+        <small class="text-danger pull-right" ng-show="StaticSpecGroups && StaticSpecGroups.StrikeThroughPricing"><s>{{StaticSpecGroups.StrikeThroughPricing.Specs.StrikeThroughPrice.Value}}</s><br/></small>
+        <b>{{LineItem.PriceSchedule.PriceBreaks[0].Price | currency}}</b>
+    </p>-->
+    <div class="product-id" ng-bind-html="LineItem.Product.ExternalID"></div>
+    <div class="view-form-icon" ng-show="allowAddToOrderInProductList && !StaticSpecGroups.Qualities.Specs.DownloadOnly">
+        <div class="row">
+            <productlistaddtocart ng-show="!actionMessage"></productlistaddtocart>
+            <div class="view-response-message alert-info text-center" alert-show="actionMessage">
+                {{actionMessage | r | xlat}}
+            </div>
+        </div>
+    </div>
+    <div class="view-form-icon" ng-show="!allowAddToOrderInProductList || StaticSpecGroups.Qualities.Specs.DownloadOnly">
+        <div class="row view-product">
+            <a class="btn btn-default btn-block" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Details' | r) | xlat}}</a>
+        </div>
+    </div>
+    <ul class="product-list-qualities-grid" ng-show="StaticSpecGroups.Qualities">
+        <li ng-repeat="(Specs, Value) in StaticSpecGroups.Qualities.Specs" compile="Value.Value"></li>
+    </ul>
+</div>

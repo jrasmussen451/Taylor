@@ -1,0 +1,44 @@
+<div ng-show="products">
+    <div class="row">
+        <button class="btn btn-primary pull-right" ng-click="addListToOrder()" ng-disabled="list.length < 1 || displayLoadingIndicator">
+            <loadingindicator  ng-show="displayLoadingIndicator"></loadingindicator>
+            <i ng-hide="lineItemErrors.length > 0" class="fa fa-shopping-cart"></i>
+            <i ng-show="lineItemErrors.length > 0" class="fa fa-warning"></i>
+            Add All To Cart
+        </button>
+    </div>
+    <div ng-show="productCount > settings.pageSize">
+        <pagination page="settings.currentPage" max-size="10" rotate="false" boundary-links="true" total-items="productCount"
+                    items-per-page="settings.pageSize" direction-links="true" previous-text="{{'Previous' | xlat}}" next-text="{{'Next' | xlat}}" first-text="{{'First' | xlat}}" last-text="{{'Last' | xlat}}"></pagination>
+    </div>
+    <div class="panel-product-list no-panels custom-product-list" ng-show="currentCategory.InteropID">
+        <nav class="nav">
+            <loadingindicator ng-show="searchLoading" title="{{'Please wait while we fetch all products' | r | xlat}}" />
+            <div class="row custom-toolbar">
+                <div class="col-xs-9 col-md-6" ng-show="currentCategory.SortOptions.length > 0">
+                    <div class="form-inline">
+                        <label>{{'Sort by: ' | r | xlat}}</label>
+                        <select class="form-control" ng-options="option.SortValue as (option.Display | xlat) for option in currentCategory.SortOptions" ng-model="sort"><option value=""></option></select>
+                    </div>
+                </div>
+                <div class="col-xs-3" ng-class="{'col-md-offset-3': currentCategory.SortOptions.length > 0, 'col-xs-offset-9': currentCategory.SortOptions.length == 0}">
+                    <div class="btn-group btn-group-maintain pull-right" ng-show="products">
+                        <div class="btn btn-default pull-right" ng-click="productListType = 'row'" ng-class="{'active': productListType == 'row'}"><i class="fa fa-list"></i></div>
+                        <div class="btn btn-default pull-right" ng-click="productListType = 'inline'" ng-class="{'active': productListType == 'inline'}"><i class="fa fa-th"></i></div>
+                    </div>
+                </div>
+            </div>
+            <ul class="product-list">
+                <li id="451_lst_prod" ng-repeat="product in products | paginate:(settings.currentPage-1) * settings.pageSize | limitTo:settings.pageSize | orderBy:sorter:direction">
+                    <div class="well">
+                        <shortproductview list="list" p="product" user="user" />
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div ng-show="productCount > settings.pageSize">
+        <pagination page="settings.currentPage" max-size="10" rotate="false" boundary-links="true" total-items="productCount"
+                    items-per-page="settings.pageSize" direction-links="true" previous-text="{{'Previous' | xlat}}" next-text="{{'Next' | xlat}}" first-text="{{'First' | xlat}}" last-text="{{'Last' | xlat}}"></pagination>
+    </div>
+</div>

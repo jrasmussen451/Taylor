@@ -1,0 +1,80 @@
+<loadingindicator ng-show="searchLoading" title="{{'Please wait while we fetch all products' | r}}" />
+<section>
+    <div class="panel panel-search">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                {{'Search' | r | xlat}}
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form role="search">
+                <div class="view-form-icon">
+                    <div class="input-group">
+                        <input type="text" ng-model="searchTerm"  class="form-control" placeholder="{{('Search' | r) + ' ' + ('Products' | r) | xlat}}" autocomplete="off" />
+                        <i class="fa fa-search"></i>
+                        <div class="input-group-btn">
+                            <button type="submit" ng-click="search()" class="btn btn-default">{{'Search' | r | xlat}}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div ng-show="productCount == 0" class="panel-product-list">
+            <p class="alert alert-info">
+                {{'Your search resulted in no records. Please refine your search.' | r | xlat}}
+            </p>
+        </div>
+        <div class="panel-footer" ng-show="productCount > settings.pageSize">
+            <div class="row">
+                <button class="btn btn-primary pull-right" ng-click="addListToOrder()" ng-disabled="list.length < 1 || displayLoadingIndicator">
+                    <loadingindicator  ng-show="displayLoadingIndicator"></loadingindicator>
+                    <i ng-hide="lineItemErrors.length > 0" class="fa fa-shopping-cart"></i>
+                    <i ng-show="lineItemErrors.length > 0" class="fa fa-warning"></i>
+                    Add To Cart
+                </button>
+            </div>
+            <div class="row">
+            <div class=" custom-toolbar" ng-show="productCount > 0">
+                <div class="form-inline">
+                    <label>{{'Sort by: ' | r | xlat}}</label>
+                    <select class="form-control" ng-model="sort">
+                        <option value="Name">Product Name: A to Z</option>
+                        <option value="Name DESC">Product Name: Z to A</option>
+                        <option value="ExternalID">Product ID: A to Z</option>
+                        <option value="ExternalID DESC">Product ID: A to Z</option>
+                        <option value="Price">Price: Low to High</option>
+                        <option value="Price DESC">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+            <pagination page="settings.currentPage" max-size="10" rotate="false" boundary-links="true" total-items="productCount"
+                        items-per-page="settings.pageSize" direction-links="true" previous-text="{{'Previous' | xlat}}" next-text="{{'Next' | xlat}}" first-text="{{'First' | xlat}}" last-text="{{'Last' | xlat}}"></pagination>
+            </div>
+            </div>
+
+        <div ng-show="productCount > 0" class=" panel-product-list" >
+            <div class="row">
+                <aside class="col-md-3 visible-md visible-lg">
+                    <div class="imageCatSize" >
+                        <categorydisplay categoryid="'EX_CommonSearchProducts'"></categorydisplay>
+                    </div>
+                </aside>
+                <div class="col-md-9 custom-product-list">
+                    <nav class="nav" >
+                        <ul class="product-list-view">
+                            <li class="inline inline-search minimal" ng-repeat="product in products | paginate:(settings.currentPage-1) * settings.pageSize | limitTo:settings.pageSize | orderBy:sorter:direction">
+                                <div class="well">
+                                    <shortproductviewminimal list="list" p="product" user="user" />
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer" ng-show="productCount > settings.pageSize">
+            <pagination page="settings.currentPage" max-size="10" rotate="false" boundary-links="true" total-items="productCount"
+                        items-per-page="settings.pageSize" direction-links="true" previous-text="{{'Previous' | xlat}}" next-text="{{'Next' | xlat}}" first-text="{{'First' | xlat}}" last-text="{{'Last' | xlat}}"></pagination>
+        </div>
+    </div>
+</section>

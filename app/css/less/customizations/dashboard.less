@@ -1,0 +1,240 @@
+//remove the border on the <header> element
+.navbar {
+  border-width:0px;
+  .nav {
+    & > li {
+      margin: 10px 0;
+      padding:0 5px;
+      &:not(:last-of-type) {
+        border-right:1px solid @off-white;
+      }
+      & > a {
+        height:auto;
+        text-transform: uppercase;
+      }
+    }
+
+  }
+}
+
+.navbar-nav > li > .dropdown-menu {
+  top:35px;
+  .border-top-radius(@border-radius-base);
+  .fa-caret-up{
+    z-index:20;
+    position:absolute;
+    top:-23px;
+    left:10px;
+    color:#fff;
+    &:first-of-type{
+      top:-25px;
+      color:#ddd;
+    }
+  }
+}
+
+#navigation-bar {
+  border-top:1px solid @off-white;
+  border-bottom:4px double @off-white;
+}
+
+//account for no meganav with jumbotron styles
+.jumbotron {
+  margin:0 5px -45px;
+}
+
+.user-dashboard {
+  background-color: @off-white;
+  color:@text-gray;
+  font-size:0.8em;
+  .spending-account {
+
+    .label-info {
+      background-color:@express-blue;
+      border-radius:0;
+    }
+  }
+  .container {
+    .flex-display(flex);
+    p,
+    ul {
+      .flex(1 0 auto);
+    }
+    @media (max-width:@screen-sm-max) {
+      p {
+        background-color:darken(@off-white, 10);
+        color: #333;
+        padding-bottom:8px;
+      }
+    }
+
+  }
+  p {
+    margin:0;
+    a {
+      padding: 10px 0;
+      color:@link-color-1;
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration:none;
+        color:@text-gray;
+      }
+    }
+  }
+  .links li {
+    display:inline-block;
+    a {
+      color:@text-gray;
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration:none;
+        color:@text-color;
+      }
+    }
+  }
+  p,
+  a {
+    padding:10px;
+  }
+}
+
+.primary-dashboard {
+  background-color:#fff;
+  padding:40px 0;
+  .container {
+    .flex-display(flex);
+    .logo a{
+      display:block;
+      img {
+        max-width:100%;
+      }
+    }
+  }
+}
+
+//** phone & tablet portrait
+@media (max-width: @screen-sm-max) {
+  .primary-dashboard,
+  .user-dashboard {
+    padding-left:5px;
+    padding-right:5px;
+    .container {
+      .flex-flow(column nowrap);
+    }
+  }
+  .user-dashboard p {
+    text-align:center;
+  }
+  .links {
+    .flex-display(flex);
+    .flex-flow(row nowrap);
+    li {
+      .flex(1 0 auto);
+      a {
+        display:block;
+        text-align:center;
+      }
+    }
+  }
+  .primary-dashboard {
+    .logo a{
+      padding-bottom:20px;
+      img {
+        margin:0 auto;
+      }
+    }
+    .minicart-container {
+      .minicart {
+        max-width:300px;
+        margin:20px auto 0;
+        float:none;
+      }
+    }
+  }
+  .spending-account{
+    margin-left:10px;
+  }
+
+
+
+}
+//** tablet landscape & desktop
+@media (min-width: @screen-md-min) {
+  .user-dashboard {
+    .container {
+      .flex-flow(row nowrap);
+    }
+    .links {
+      text-align:right;
+    }
+  }
+  .primary-dashboard {
+    .container {
+      .flex-flow(row nowrap);
+      .logo {
+        .flex(1);
+      }
+      .search {
+        .flex(2);
+      }
+      .spending-account {
+        .flex(0.8);
+      }
+      .minicart-container {
+        .flex(1.2);
+      }
+    }
+  }
+
+}
+
+.spending-account {
+  .fa-caret-down {
+    color:#0790D8;
+  }
+  margin-top:8px;
+  cursor: auto;
+  color:@gray-light;
+  text-align:center;
+  margin-left:20px;
+  &:hover {
+    .spending-account-list {
+      display:block;
+    }
+  }
+}
+
+.spending-account-list {
+  text-align:left;
+  display:none;
+  .border-top-radius(@border-radius-base);
+  .border-bottom-radius(@border-radius-base);
+  .box-shadow(0px 6px 12px 0px rgba(0,0,0,0.176));
+  border:1px solid rgba(0,0,0,0.2);
+  padding:@grid-gutter-width;
+  position:absolute;
+  top:30px;
+  left:0;
+  right:0;
+  background-color:#fff;
+  z-index:10;
+  max-width: 300px;
+  .fa-caret-up{
+    position:absolute;
+    top:-18px;
+    left:40px;
+    color:#fff;
+    &:first-of-type{
+      top:-20px;
+      color:rgba(0,0,0,0.2);
+    }
+  }
+  .fa-money{
+    font-size: 10px;
+  }
+  .fa-question{
+    padding-right:5px;
+  }
+}

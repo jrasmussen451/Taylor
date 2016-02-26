@@ -1,0 +1,35 @@
+<ul class="breadcrumb">
+    <li ng-repeat="crumb in breadcrumbs | hiddencategories">
+        <a ng-href="{{crumb.link}}">{{crumb.name}}</a>
+    </li>
+</ul>
+<section>
+    <div class="row">
+        <aside class="col-md-3 visible-md visible-lg">
+            <!--<div class="panel-nav">
+                <h3 class="text-muted"><i class="fa fa-list"></i> {{'Categories' | r | xlat | uppercase}}</h3>
+                <nav class="nav 451qa_sidenav panel-body">
+                    <ul>
+                        <categorytree tree='tree' current='currentCategory' />
+                    </ul>
+                </nav>
+            </div>-->
+            <div class="imageCatSize">
+                <categorydisplay categoryid="'EX_LatestProducts'"></categorydisplay>
+                <categorydisplay categoryid="'EX_BestProducts'"></categorydisplay>
+            </div>
+        </aside>
+        <div class="col-md-9">
+            <categorylistview></categorylistview>
+
+            <div class="description text-left">
+            	<p ng-bind-html="trusted(currentCategory.Description)"></p>
+            </div>
+
+            <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}"/>
+
+            <productlistview ng-show="productListType == 'row'"></productlistview>
+            <productlistview-alt ng-show="productListType == 'inline'"></productlistview-alt>
+        </div>
+    </div>
+</section>

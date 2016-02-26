@@ -1,0 +1,47 @@
+<section id="dashboard">
+    <div class="user-dashboard" ng-show="(cartCount && user.CurrentOrderID) || (SpendingAccounts.length > 0 && SpendingAccounts[0].Balance)">
+    </div>
+    <div class="primary-dashboard">
+        <div class="container">
+            <div class="logo">
+                <a href="catalog">
+                    <img ng-src="css/images/custom/logo.png" />
+                </a>
+            </div>
+            <div class="search">
+                <form ng-submit="customSearch(searchTerm, searchType)">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="searchTerm" placeholder="{{searchType}}"/>
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> </button>
+                    </span>
+                    </div>
+                </form>
+            </div>
+            <div class="spending-account-xs ng-visible-xs navbar-fixed-top" ng-show="SpendingAccounts.length > 0 && SpendingAccounts[0].Balance">
+                <div ng-repeat="sa in SpendingAccounts">
+                    &nbsp;{{sa.Label}}: {{sa.Balance | currency}}&nbsp;
+                </div>
+            </div>
+            <div class="spending-account text-center ng-hidden-xs" ng-show="SpendingAccounts.length > 0 && SpendingAccounts[0].Balance" >
+                <i class="fa fa-money"></i>
+                Co-Op Dollars <i class="fa fa-caret-down "></i>
+                <div class="spending-account-list">
+                    <i class="fa fa-caret-up fa-2x"></i>
+                    <i class="fa fa-caret-up fa-2x"></i>
+                    <div ng-repeat="sa in SpendingAccounts">
+                        <dl>
+                            <dt>{{sa.Label}}</dt>
+                            <dd>{{sa.Balance | currency}}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="minicart-container text-center">
+                <div>
+                    <minicart></minicart>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,90 @@
+#tags,
+#tabs {
+  display:none;
+}
+.tab-content {
+  margin-bottom:15px;
+  padding:15px;
+  border:1px solid #ddd;
+  border-top:none;
+  min-height:200px;
+  color: @text-gray;
+}
+
+.additional-buttons {
+  display:inline-block;
+  div[ng-repeat] {
+    margin-right:5px;
+    display:inline-block;
+    a.btn {
+      padding-top:9px;
+      padding-bottom:9px;
+    }
+  }
+}
+
+#customProductDescription {
+  .tags {
+    display:none;
+  }
+  div.StateDescription {
+    display:none;
+    &.Generic {
+      display:block;
+    }
+  }
+  &.English {
+    div.StateDescription.Spanish {
+      display:none !important;
+    }
+    &.California {
+      div.StateDescription.California {
+        display:block;
+      }
+    }
+    &.York {
+      div.StateDescription.NewYork {
+        display:block;
+      }
+    }
+    &.Massachusetts {
+      div.StateDescription.Massachusetts {
+        display:block;
+      }
+    }
+    &.California,
+    &.York,
+    &.Massachusetts {
+      div.StateDescription.Generic {
+        display:none;
+      }
+    }
+  }
+  &.Spanish {
+    div.StateDescription.English {
+      display:none !important;
+    }
+    &.California {
+      div.StateDescription.California {
+        display:block;
+      }
+    }
+    &.York {
+      div.StateDescription.NewYork {
+        display:block;
+      }
+    }
+    &.Massachusetts {
+      div.StateDescription.Massachusetts {
+        display:block;
+      }
+    }
+    &.California,
+    &.York,
+    &.Massachusetts {
+      div.StateDescription.Generic {
+        display:none;
+      }
+    }
+  }
+}
