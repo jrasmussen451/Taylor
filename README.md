@@ -1,25 +1,25 @@
-#### Taylor Corp - Verizon  / 18.6.2 CT Release and 1.1.3 SPA Release  (1214) 
-###### Last Updated: 2/26/16
-======== 
+##### Taylor Corp - Verizon  / 18.6.2 CT Release and 1.1.3 SPA Release  (1214)
+##### Last Update: 2/26/16
+========
 
-##### Important Notes! 
-
-
-##### Developers
-Four51: Jen
-
-##### Github URL
+### Github URL
 * github.com/Four51Repositories/Verizon
 
-======== 
+========
 
-##### Product Detail Template 
-`partials/productDetailTemplate.html` 
+### Product Detail Template 
+`partials/productDetailTemplate.html`
 * Default PDT in repo
 
+========
+
+### Product Configuration
+``
+* 
+
 ======== 
 
-##### Images
+### Images
 `css/images/custom/` 
 * css/images/custom/background.jpg
 * css/images/logo.png
@@ -30,9 +30,9 @@ Four51: Jen
 * css/images/help/step5.jpg
 * css/images/products/TABRDN16X271015-installation.jpg
 
-======== 
+========
 
-##### Fonts
+### Fonts
 `css/fonts` 
 * NHaasGroteskDSPro-55Rg.otf
 * NHaasGroteskDSPro-75Bd.otf
@@ -40,169 +40,195 @@ Four51: Jen
 * NHaasGroteskTXPro-75Bd.otf
 
 ======== 
+### OrderCloud Custom Solutions
 
-##### Miscellaneous
-
-======== 
-##### OrderCloud modules
-
-`lib/oc/addToCartPreview.js` 
+###### Add To Cart Preview
+`lib/oc/addToCartPreview.js`
 * Add to Cart Preview 
 
-======== 
-`lib/oc/backToTop.js` 
-* Back To Top Arrow
+**Instructions**
+* Follow instructions under Custom Solutions Library - Add To Cart Preview
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Add%20To%20Cart%20Preview`
 
-======== 
-`lib/oc/bowser.js` 
+========
+
+###### Back To Top
+`lib/oc/backToTop.js`
+
+**Instructions**
+* Follow instructions under Custom Solutions Library - Back To Top
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Back%20To%20Top`
+
+========
+
+###### ??
+`lib/oc/bowser.js`
 * Browser Service
 
-======== 
-`lib/oc/carousel.js` 
-* Bootstrap Carousel
+========
+
+###### Bootstrap Carousel
+`lib/oc/carousel.js`
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Bootstrap Carousel
-- https://github.com/Four51Repositories/CustomSolutions/tree/master/Bootstrap%20Carousel
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Bootstrap%20Carousel`
 
-* Specific naming convention
-- VerizonCarouselImage
+**Specific naming convention**
+* VerizonCarouselImage
 
-======== 
-`lib/oc/categoryCollapse.js` 
-* Category Collapse (not currently in use)
+========
 
-======== 
-`lib/oc/categoryModal.js` 
-* Category Modal (navigation)
+###### Category Collapse (not in use)
+`lib/oc/categoryCollapse.js`
 
 **Instructions**
-* Follow instructions under Custom Solutions Library - Category Modal (dev branch)
+* Follow instructions under Custom Solutions Library - Category Collapse
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Category%20Collapse`
 
-======== 
-`lib/oc/fixedFooter.js` 
-* Fixed Footer
+========
+
+###### Category Modal (module in development)
+`lib/oc/categoryModal.js`
+
+**Instructions**
+* Follow instructions under Custom Solutions Library - Category Modal
+`https://github.com/Four51Repositories/CustomSolutions/tree/dev/Category%20Modal`
+
+========
+
+###### Fixed Footer
+`lib/oc/fixedFooter.js`
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Fixed Footer
-- https://github.com/Four51Repositories/CustomSolutions/tree/master/Fixed%20Footer
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Fixed%20Footer`
 
-======== 
-`lib/oc/hamburgerNavigation.js` 
-* Hamburger Navigation (mobile)
+========
+
+###### Hamburger Navigation
+`lib/oc/hamburgerNavigation.js`
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Hamburger Navigation Subcategories
-- https://github.com/Four51Repositories/CustomSolutions/tree/master/Hamburger%20Navigation%20Subcategories
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Hamburger%20Navigation%20Subcategories`
 
-======== 
-`lib/oc/largeAddressListSearch.js` 
-* Large Address List Search (checkout)
+========
+
+###### Large Address List Search
+`lib/oc/largeAddressListSearch.js`
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Large Address List Search
-- https://github.com/Four51Repositories/CustomSolutions/tree/master/Large%20Address%20List%20Search
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Large%20Address%20List%20Search`
 
-======== 
-`lib/oc/minicart.js` 
-* Minicart
+========
+
+###### Minicart
+`lib/oc/minicart.js`
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Mini Cart
-- https://github.com/Four51Repositories/CustomSolutions/blob/master/Mini%20Cart/minicart.js
+`https://github.com/Four51Repositories/CustomSolutions/blob/master/Mini%20Cart/minicart.js`
 
-* Specific updates
-- template has specific updates 
-- hide pricing
+**Specific updates**
+* template has specific updates 
+* hide pricing
 
-======== 
-`lib/oc/productLightbox.js` 
-* Product Lightbox
+========
+
+###### Order Cloud Spec Forms
+`lib/oc/specForms.js`
+
+**Instructions**
+* Follow instructions under Four51 Repositories OrderCloud-SpecForms
+`https://github.com/Four51Repositories/OrderCloud-SpecForms`
+
+========
+
+###### Product Lightbox
+`lib/oc/productLightbox.js`
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Product Lightbox
-- https://github.com/Four51Repositories/CustomSolutions/tree/master/Product%20Lightbox
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Product%20Lightbox`
 
-======== 
-`lib/oc/productListAddToCart.js` 
-* Product List Add To Cart
+========
+
+###### Product List Add To Cart
+`lib/oc/productListAddToCart.js`
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Product List Add To Cart
-- https://github.com/Four51Repositories/CustomSolutions/tree/master/Product%20List%20Add%20to%20Cart
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Product%20List%20Add%20to%20Cart`
 
-======== 
-`lib/oc/productZoom.js` 
-* Product Zoom
+========
+
+###### Product Zoom
+`lib/oc/productZoom.js`
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Product Zoom
-- https://github.com/Four51Repositories/CustomSolutions/tree/master/Product%20Zoom
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Product%20Zoom`
 
-======== 
-`lib/oc/securityModal.js` 
-* Security Modal
+========
+
+###### Security Modal
+`lib/oc/securityModal.js`
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Security Modal
-- https://github.com/Four51Repositories/CustomSolutions/tree/master/Security%20Modal
+`https://github.com/Four51Repositories/CustomSolutions/tree/master/Security%20Modal`
 
-======== 
-`lib/oc/specForms.js` 
-* OrderCloud - Spec Forms
+========
 
-**Instructions**
-* Follow instructions under OrderCloud-SpecForms
-- https://github.com/Four51Repositories/OrderCloud-SpecForms
-
-======== 
-`lib/oc/termsModal.js` 
-* Terms Modal
+###### Terms Modal (module in development)
+`lib/oc/termsModal.js`
 
 **Instructions**
-* Follow instructions under Custom Solutions Library - Terms Modal (dev branch)
-- https://github.com/Four51Repositories/CustomSolutions/tree/dev/Terms%20Modal
+* Follow instructions under Custom Solutions Library - Terms Modal
+`https://github.com/Four51Repositories/CustomSolutions/tree/dev/Terms%20Modal`
 
-======== 
+========
 
-##### Custom Views
+### Custom Views
 ###### html
-`partials/controls/categoryDisplay.html` 
+`partials/controls/categoryDisplay.html`
 * 
 
-`partials/controls/categoryDisplayInline.html` 
+`partials/controls/categoryDisplayInline.html`
 * 
 
-`partials/controls/minicart.html` 
+`partials/controls/minicart.html`
 * 
 
-`partials/Messages/preCartMessage.html` 
+`partials/Messages/preCartMessage.html`
 * 
 
-`partials/categoryListTree.html` 
+`partials/categoryListTree.html`
 * 
 
-`partials/toggleProductSearch.html` 
+`partials/toggleProductSearch.html`
 * 
 
 ###### js
-`js/services/bonusItemService.js` 
+`js/services/bonusItemService.js`
 * 
 
-`js/services/browserService.js` 
+`js/services/browserService.js`
 * Bower
 
-`js/services/categoryDisplayService.js` 
+`js/services/categoryDisplayService.js`
 * Custom Category Display
 
-`js/services/webMergeService.js` 
+`js/services/webMergeService.js`
 * WebMerge (not currently in use) 
 
 ======== 
 
-##### Modified
+### Modified
 ###### js
-`js/app.js` 
+`js/app.js`
 * 
 
 ##### html
@@ -211,5 +237,3 @@ Four51: Jen
 
 `partials/controls/orderSummary.html`
 * 
-
-
