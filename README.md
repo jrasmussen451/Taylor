@@ -246,7 +246,7 @@
 
 ###### Interstitial Messaging
 `partials/Messages/preCartMessage.html`
-* 
+* Interstitial Messaging (optional) 
 
 ###### html
 `partials/controls/categoryDisplay.html`
@@ -258,12 +258,9 @@
 `partials/categoryListTree.html`
 * Category List Tree
 
-`partials/toggleProductSearch.html`
-* 
-
 ###### js
 `js/services/bonusItemService.js`
-* 
+* Bonus Item (not currently in use)
 
 `js/services/categoryDisplayService.js`
 * Custom Category Display
