@@ -11,8 +11,10 @@
     </div>
     <div class="col-sm-8 text-left">
         <div class="panel-body">
-            <p class="product-name" ng-bind-html="LineItem.Product.Name"></p>
-            <small class="pull-right text-info">{{LineItem.Product.ExternalID}}</small>
+            <div class="product-name" ng-bind-html="LineItem.Product.Name" />
+            <small>{{LineItem.Product.ExternalID}}</small>
+            <br />
+            <!-- <small class="pull-right text-info">{{LineItem.Product.ExternalID}}</small>-->
             <p class="product-description" ng-class="{'expanded':someVar}"><small ng-bind-html="trustedDescription(LineItem.Product)"></small></p>
             <div class="row hidden-xs"  ng-show="LineItem.Product.productTabs[0].Title == 'Description'" ng-bind-html="LineItem.Product.productTabs[0].Content">
                 <div class="col-lg-12 col-sm-12 col-xs-9">
@@ -47,5 +49,3 @@
         </div>
     </div>
 </div>
-
-

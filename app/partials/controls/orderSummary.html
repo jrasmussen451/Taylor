@@ -8,14 +8,11 @@
         <loadingindicator ng-show="couponLoadingIndicator" title="{{'Please wait while we verify and apply your promotion code' | r | xlat}}" />
         <loadingindicator ng-show="couponRemoveIndicator" title="{{'Please wait while we remove your promotion code' | r | xlat}}" />
         <orderconfirmationmessage />
+
+        <!--collapsible item summary-->
         <div class="item-summary" ng-init="isCollapsedItems = true">
             <span>
                 <a ng-click="isCollapsedItems = !isCollapsedItems">
-
-                    <!--<i class="fa fa-plus" ng-show="isCollapsedItems"></i>
-                    <i class="fa fa-minus" ng-show="!isCollapsedItems"></i>
-                    {{'Items' | r | xlat}}-->
-
                     {{'Items' | r | xlat}}&nbsp;
                     <i class="fa fa-caret-down" ng-show="isCollapsedItems"></i>
                     <i class="fa fa-caret-up" ng-show="!isCollapsedItems"></i>
@@ -37,6 +34,8 @@
                 </table>
             </div>
         </div>
+        <!--collapsible item summary-->
+
         <p ng-if="!(user.Permissions.contains('HidePricing'))">
             <span class="text-info">{{'Subtotal' | r | xlat}}</span>
             <span class="pull-right">{{currentOrder.Subtotal | culturecurrency}}</span>

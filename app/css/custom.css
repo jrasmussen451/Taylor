@@ -1,11 +1,8 @@
-/*SEE the colors.txt file for find and replace color values*/
-/* this file is currently in development 102315 */
-
 /*
 Static file for Theme changes
 Theme name: Verizon Demo
 Version: 2.0
-Last Updated: 2/25/16
+Last Updated: 2/28/16
 Developers: Jen
 */
 
@@ -113,7 +110,7 @@ a:focus {
 /*container*/
 @media (max-width: 768px) {
     .container-view {
-       margin-top: 15px;
+        margin-top: 15px;
     }
 }
 
@@ -1323,6 +1320,11 @@ a.list-group-item.active:focus .list-group-item-text {
     margin-left:15px;
 }
 
+.product-detail-default .tab-pane .tabs small,
+.product-detail-custom .tab-pane .tabs small {
+    float:left;
+}
+
 .product-detail-default .panel-primary,
 .product-detail-custom .panel-primary {
     border-color: #ffffff;
@@ -1470,8 +1472,10 @@ a.list-group-item.active:focus .list-group-item-text {
 
 .no-panels.custom-product-list .well .price,
 .custom-product-list .well .price {
-    margin-top: 20px;
-    font-weight: bold;
+    /*margin-left: 15px;
+    margin-top: 15px;
+    font-weight: bold;*/
+    display:none;
 }
 
 .no-panels.custom-product-list .btn-group .btn-default,
@@ -1583,6 +1587,11 @@ a.list-group-item.active:focus .list-group-item-text {
     max-height: 300px;
     max-width: 100%;
 }
+
+.category-description {
+    display:none;
+}
+
 .custom-short-product .product-description:not(.expanded) {
     max-height: 125px;
     overflow: hidden;
@@ -1668,7 +1677,7 @@ form[name="addToOrderForm"]  {
 
 .product-list-qualities-list li {
     min-height: 0 !important;
-    margin: 5px 0 -10px 0;
+    margin: 5px 15px -10px;
 }
 
 .product-list-qualities-list li a, .product-list-qualities-grid li a, .product-list-qualities-pdt li a {
@@ -1725,7 +1734,7 @@ ul .inline.minimal .well {
 }
 
 .row.view-product {
-    top: -14px;
+    top: -3px;
 }
 
 .row.view-product .btn {
@@ -1747,6 +1756,8 @@ ul .inline.minimal .well {
 .no-panels.custom-product-list .inline .product-name, .custom-product-list .inline .product-name {
     height: 40px;
 }
+
+
 
 .empty {
     height: 185px;

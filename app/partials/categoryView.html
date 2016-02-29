@@ -22,8 +22,8 @@
         <div class="col-md-9">
             <categorylistview></categorylistview>
 
-            <div class="description text-left">
-            	<p ng-bind-html="trusted(currentCategory.Description)"></p>
+            <div class="category-description text-left">
+                <p ng-bind-html="trusted(currentCategory.Description)"></p>
             </div>
 
             <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}"/>
