@@ -1,23 +1,75 @@
 ##### Taylor Corp - Verizon  / 18.6.2 CT Release and 1.1.3 SPA Release  (1214)
-##### Last Update: 2/26/16
+##### Last Update: 2/28/16
 ========
 
 ### Github URL
-* github.com/Four51Repositories/Verizon
+* github.com/Four51Repositories/Taylor
 
 ========
+
+### Product Configuration
+
+
+###### Sidebar(1) "Store Essentials"
+* Products assigned to a product category with an Interop ID of **EX_LatestProducts**
+
+**Troubleshooting**
+* Category must be active and have assigned products
+* Category must be assigned to the company, group, or user
+
+========
+
+###### Sidebar(2) "Current Promotions"
+* Products assigned to a product category with an Interop ID of **EX_BestProducts**
+
+**Troubleshooting**
+* Category must be active and have assigned products
+* Category must be assigned to the company, group, or user
+
+========
+
+###### Tabs 
+`partials/productDescriptionTabsTemplate.html`
+* Follow the comments in the template to add tabs to a product description
+
+`partials/productDescriptionTabs_4MAPDN24X480116.html`
+* 4MAPDN24X480116 : Nationwide Coverage Map
+
+`partials/productDescriptionTabs_TABRDN16X271015.html`
+* TABRDN16X271015 : Better Matters Tablet Wall Graphic
+
+========
+
+###### Qualities ( New Store Opening, Multiple Languages, Product Video )
+
+**Instructions**
+* The Static Spec Group Name must be Qualities
+* Use the FontAwesome icon library for additional icon options ( https://fortawesome.github.io/Font-Awesome/ ) 
+
+**Examples**
+
+*New Store Opening*
+* Static Spec Group Name: Qualities
+* Spec Name: New Store Opening
+* Spec Value: `<i class="fa fa-star"></i> New Store Opening`
+
+*Multiple Languages*
+* Static Spec Group Name: Qualities
+* Spec Name: Multiple Languages
+* Spec Value: `<i class="fa fa-language"></i> Multiple Languages`
+
+*Product Video*
+* Static Spec Group Name: Qualities
+* Spec Name: Product Video
+* Spec Value: `<i class="fa fa-video-camera"></i> Product Video`
+
+======== 
 
 ### Product Detail Template 
 `partials/productDetailTemplate.html`
 * Default PDT in repo
 
 ========
-
-### Product Configuration
-``
-* 
-
-======== 
 
 ### Images
 `css/images/custom/` 
@@ -44,7 +96,6 @@
 
 ###### Add To Cart Preview
 `lib/oc/addToCartPreview.js`
-* Add to Cart Preview 
 
 **Instructions**
 * Follow instructions under Custom Solutions Library - Add To Cart Preview
@@ -61,7 +112,7 @@
 
 ========
 
-###### ??
+###### Browser Service
 `lib/oc/bowser.js`
 * Browser Service
 
@@ -192,21 +243,20 @@
 ========
 
 ### Custom Views
-###### html
-`partials/controls/categoryDisplay.html`
-* 
 
-`partials/controls/categoryDisplayInline.html`
-* 
-
-`partials/controls/minicart.html`
-* 
-
+###### Interstitial Messaging
 `partials/Messages/preCartMessage.html`
 * 
 
+###### html
+`partials/controls/categoryDisplay.html`
+* Category Display
+
+`partials/controls/categoryDisplayInline.html`
+* Category Display Inline
+
 `partials/categoryListTree.html`
-* 
+* Category List Tree
 
 `partials/toggleProductSearch.html`
 * 
@@ -214,9 +264,6 @@
 ###### js
 `js/services/bonusItemService.js`
 * 
-
-`js/services/browserService.js`
-* Bower
 
 `js/services/categoryDisplayService.js`
 * Custom Category Display
@@ -229,11 +276,49 @@
 ### Modified
 ###### js
 `js/app.js`
-* 
+* Custom Solutions module injection
+
+`js/directives/categorydisplay.js`
+* Category Display / lines 1-11
+* Category Display Inline / lines 13-24
+* categoryDisplayCtrl / lines 26-39
+* category Display (service) / lines 41-128
+
+`js/directives/product.js`
+* Product View Alternate / lines 11-19
+* Product List Init / lines 21-63
+* Dynamic Static Specs / lines 183-211
+
+`js/services/categoryDisplayService.js`
+* categoryDisplayService / lines 1-21
+* categoryliststree / lines 22-33
+* categorylistnode / lines 35-52
+
 
 ##### html
 `index.html`
-* 
+* AnswerDash (optional) / lines 21-23
+* Hamburger Navigation / lines 34-36
+* Bootstrap Carousel / lines 38-40
+* Hide branding / lines 42-45
+* Fixed Footer / line 50
+* Back To Top / line 52
+* Custom Solution Modules / lines 78-94
+* Custom Services / lines 170-174
+* Comment out tree for Fixed Footer module / line 190
+* Category display / lines 216-217
+
+`partials/categoryListTree.html`
+* Category List Tree
+
+`partials/categoryView.html`
+* Custom Category Displays (Best & Latest Products) / lines 18-19
+
+`partials/controls/categoryDisplay.html`
+* Category Display
+
+`partials/controls/categoryDisplayInline.html`
+* Category Display Inline
 
 `partials/controls/orderSummary.html`
-* 
+* Collapsible Item Summary / lines 12-37
