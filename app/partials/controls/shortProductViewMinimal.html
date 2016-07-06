@@ -1,7 +1,7 @@
 <div class="451qa_prod_item custom-short-product inline">
     <a href="product/{{LineItem.Product.InteropID}}">
         <figure ng-show="LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl" >
-            <img class="img=responsive" ng-src="{{LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl}}"/>
+            <img class="img-responsive" ng-src="{{LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl}}"/>
         </figure>
         <div class="empty" ng-hide="LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl">
             <span class="fa empty"><i class="fa fa-camera"></i></span>
@@ -11,8 +11,15 @@
     <!--<p class="price">
         <small class="text-danger pull-right" ng-show="StaticSpecGroups && StaticSpecGroups.StrikeThroughPricing"><s>{{StaticSpecGroups.StrikeThroughPricing.Specs.StrikeThroughPrice.Value}}</s><br/></small>
         <b>{{LineItem.PriceSchedule.PriceBreaks[0].Price | currency}}</b>
-    </p>-->
-    <div class="product-id" ng-bind-html="LineItem.Product.ExternalID"></div>
+    </p>
+    <div class="product-id" ng-bind-html="LineItem.Product.ExternalID"></div>-->
+    <div class="qty-detail">
+        <span ng-if="LineItem.Product.QuantityMultiplier == 1">1 <small>each</small><br /></span>
+        <span ng-if="LineItem.Product.QuantityMultiplier > 1">1 (x {{LineItem.Product.QuantityMultiplier}})<br /></span>
+        <span ng-show="LineItem.Product.DisplayInventory && inventoryDisplay(LineItem.Product, LineItem.Variant) != undefined">
+            <small><span class="text-info">{{'Quantity Available' | r | xlat}}</span> {{inventoryDisplay(LineItem.Product, LineItem.Variant) }}</small>
+        </span>
+    </div>
     <div class="view-form-icon" ng-show="allowAddToOrderInProductList && !StaticSpecGroups.Qualities.Specs.DownloadOnly">
         <div class="row">
             <productlistaddtocart ng-show="!actionMessage"></productlistaddtocart>

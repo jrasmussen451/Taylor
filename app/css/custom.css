@@ -2,7 +2,7 @@
 Static file for Theme changes
 Theme name: Verizon Demo
 Version: 2.0
-Last Updated: 2/28/16
+Last Updated: 7/5/16
 Developers: Jen
 */
 
@@ -1231,6 +1231,7 @@ a.list-group-item.active:focus .list-group-item-text {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-style: italic;
+    min-height:40px;
 }
 
 .gallery-display {
@@ -1607,7 +1608,13 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .custom-short-product img {
-    max-height:150px;
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.custom-short-product figure {
+    min-height:150px;
+    text-align: center; /*align is not a valid declaration property*/
 }
 
 .panel-category-list ul li a .empty {
@@ -1749,15 +1756,25 @@ ul .inline.minimal .well {
     padding-bottom: 12px;
 }
 
-.no-panels.custom-product-list .inline .product-name, .custom-product-list .inline .product-name {
-    justify-content: flex-start;
-}
-
-.no-panels.custom-product-list .inline .product-name, .custom-product-list .inline .product-name {
+.no-panels.custom-product-list .inline .product-name,
+.custom-product-list .inline .product-name {
+    justify-content: center;
     height: 40px;
 }
 
+/*.custom-product-list .inline .product-id {
+    justify-content: center;
+    text-align: center;
+}*/
 
+.custom-product-list .inline .qty-detail {
+    justify-content: center;
+    text-align: center;
+}
+
+/*.custom-product-list .inline .qty-detail small {
+    text-transform: uppercase;
+}*/
 
 .empty {
     height: 185px;
