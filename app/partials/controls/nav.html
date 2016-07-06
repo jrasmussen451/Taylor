@@ -1,6 +1,6 @@
 <header class="header navbar navbar-inner">
     <nav tolerance='20' offset='200' class="navbar navbar-default" role="navigation">
-       
+
         <ng-include src="'partials/controls/dashboard.html'"></ng-include>
 
         <section class="navigation-bar hidden-xs">
@@ -61,6 +61,12 @@
                         <a href="reports">
                             <i class="fa fa-bar-chart-o"></i>
                             <span class="hidden-xs">{{'Reports' | r | xlat}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.workflowoneaccess.com/customers/verizon/Pages/default.aspx" >
+                            <i class="fa fa-bar-chart-o"></i>
+                            <span class="hidden-xs">{{'Reporting' | r | xlat}}</span>
                         </a>
                     </li>
                     <li ng-class="{'active': isActive(['admin', 'addresses', 'address', 'messages', 'message'])}">
