@@ -1,7 +1,7 @@
 angular.module('compile-module', [], ['$compileProvider', function($compileProvider) {
     // configure new 'compile' directive by passing a directive
     // factory function. The factory function injects the '$compile'
-    $compileProvider.directive('compile', function($compile) {
+    $compileProvider.directive('$compile', function($compile) {
         // directive factory creates a link function
         return function(scope, element, attrs) {
             scope.$watch(
