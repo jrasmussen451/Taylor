@@ -62,10 +62,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2 id="451qa_prod_name" ng-bind-html="LineItem.Product.Name"></h2>
-                <h4 ng-show="LineItem.Product.ExternalID && !LineItem.Variant.ExternalID" class="text-info">
+                <!--<h4 ng-show="LineItem.Product.ExternalID && !LineItem.Variant.ExternalID" class="text-info">
                     {{'ID' | r | xlat}}: {{LineItem.Product.ExternalID}}
-                </h4>
-                <!--<div class="text-info"><h4>FROZEN</h4></div>!-->
                 </h4>
                 <h4 ng-show="LineItem.Variant.ExternalID" class="text-info">
                     {{'ID' | r | xlat}}: {{LineItem.Variant.ExternalID}}
@@ -76,7 +74,7 @@
                         <br/>
                     </small>
                     {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
-                </h2>
+                </h2>-->
             </div>
         </div>
         <!-- PRODUCT TABS! --->
@@ -92,7 +90,7 @@
         </div>
         <!-- PRODUCT DESCRIPTION PANEL! --->
         <div class="panel panel-primary">
-            <div class="panel-body" id="451_area_prod_desc">
+            <div id="451_area_prod_desc">
                 <p id="customProductDescription" ng-bind-html="trustedDescription(LineItem.Product)"
                    class="{{LineItem.Product.Specs.State.Value ? LineItem.Product.Specs.State.Value : ''}} {{LineItem.Product.Specs.Language.Value ? LineItem.Product.Specs.Language.Value : ''}}" />
                 <p ng-show="LineItem.Variant.Description" ng-bind-html="trustedDescription(LineItem.Variant)" />
@@ -177,6 +175,10 @@
             <ordertypeselector ng-show="(canAddToStandardOrder && canAddToReplenishmentOrder && !currentOrder.ID)"></ordertypeselector>
             <addtoorderspecs ng-show="allowAddToOrder"></addtoorderspecs>
             <div class="form-group" ng-show="allowAddToOrder">
+                <div class="qty-detail">
+                    <span ng-if="LineItem.Product.QuantityMultiplier == 1"><span class="text-info">{{'UOM' | r | xlat}}</span> 1 <small>each</small><br /></span>
+                    <span ng-if="LineItem.Product.QuantityMultiplier > 1"><span class="text-info">{{'UOM' | r | xlat}}</span> 1 (x {{LineItem.Product.QuantityMultiplier}})<br /></span>
+                </div>
                 <p ng-show="LineItem.Product.DisplayInventory && (LineItem.Variant || LineItem.Product.Variants.length == 0)">
                     <span class="text-info">{{'Quantity Available' | r | xlat}}</span> {{inventoryDisplay(LineItem.Product, LineItem.Variant)}}
                 </p>
