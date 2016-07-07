@@ -1,9 +1,9 @@
 ##### Taylor Corp - Verizon  / 18.6.2 CT Release and 1.1.3 SPA Release  (1214)
-##### Last Update: 2/28/16
+##### Last Update: 7/5/16
 ========
 
 ### Github URL
-* github.com/Four51Repositories/Taylor
+* github.com/mzeher/Taylor
 
 ========
 
@@ -65,9 +65,9 @@
 
 ======== 
 
-### Product Detail Template 
+### Product Detail Template  
 `partials/productDetailTemplate.html`
-* Default PDT in repo
+* Backup ONLY of default PDT "Verizon 2.0 Template" in repo
 
 ========
 
@@ -275,6 +275,9 @@
 `js/app.js`
 * Custom Solutions module injection
 
+`js/filters.js`
+* Set the hidden category interop ID's / line 114
+
 `js/directives/categorydisplay.js`
 * Category Display / lines 1-11
 * Category Display Inline / lines 13-24
@@ -319,3 +322,6 @@
 
 `partials/controls/orderSummary.html`
 * Collapsible Item Summary / lines 12-37
+
+`partials/controls/shortProductViewMinimal.html`
+* qty detail [ multiplier & uom ]  / lines 11-22
