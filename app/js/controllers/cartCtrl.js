@@ -1,7 +1,7 @@
 four51.app.controller('CartViewCtrl', ['$scope', '$routeParams', '$location', '$451', 'Order', 'OrderConfig', 'User',
 function ($scope, $routeParams, $location, $451, Order, OrderConfig, User) {
-	var isEditforApproval = $routeParams.id != null && $scope.user.Permissions.contains('EditApprovalOrder');
-	if (isEditforApproval) {
+	$scope.isEditforApproval = $routeParams.id != null && $scope.user.Permissions.contains('EditApprovalOrder');
+	if ($scope.isEditforApproval) {
 		Order.get($routeParams.id, function(order) {
 			$scope.currentOrder = order;
 			// add cost center if it doesn't exists for the approving user
@@ -102,12 +102,12 @@ function ($scope, $routeParams, $location, $451, Order, OrderConfig, User) {
 
 	$scope.checkOut = function() {
 		$scope.displayLoadingIndicator = true;
-		if (!isEditforApproval)
+		if (!$scope.isEditforApproval)
 			OrderConfig.address($scope.currentOrder, $scope.user);
 		Order.save($scope.currentOrder,
 			function(data) {
 				$scope.currentOrder = data;
-				$location.path(isEditforApproval ? 'checkout/' + $routeParams.id : 'checkout');
+				$location.path($scope.isEditforApproval ? 'checkout/' + $routeParams.id : 'checkout');
 				$scope.displayLoadingIndicator = false;
 			},
 			function(ex) {
@@ -121,6 +121,8 @@ function ($scope, $routeParams, $location, $451, Order, OrderConfig, User) {
 		var newTotal = 0;
 		if (!$scope.currentOrder) return newTotal;
 		angular.forEach($scope.currentOrder.LineItems, function(item){
+			if (item.IsKitParent)
+				$scope.cart.$setValidity('kitValidation', !item.KitIsInvalid);
 			newTotal += item.LineTotal;
 		});
 		$scope.currentOrder.Subtotal = newTotal;
@@ -144,5 +146,9 @@ function ($scope, $routeParams, $location, $451, Order, OrderConfig, User) {
 
 	$scope.cancelEdit = function() {
 		$location.path('order');
+	};
+
+	$scope.downloadProof = function(item) {
+		window.location = item.Variant.ProofUrl;
 	};
 }]);
