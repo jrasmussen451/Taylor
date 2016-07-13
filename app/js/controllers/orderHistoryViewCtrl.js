@@ -92,23 +92,23 @@ four51.app.controller('OrderViewCtrl', ['$scope', '$location', '$routeParams', '
 			)
 		};
 
-        $scope.downloadProof = function(item) {
-            $scope.errorMessage = null;
-            Variant.get({
-                VariantInteropID: item.Variant.InteropID,
-                ProductInteropID: item.Product.InteropID
-            }, function (v) {
-                if (v.ProofUrl) {
-                    window.location = v.ProofUrl;
-                }
-                else {
-                    $scope.errorMessage = "Unable to download proof"
-                }
-            });
-        }
-
+		$scope.downloadProof = function(item) {
+			$scope.errorMessage = null;
+			Variant.get({
+				VariantInteropID: item.Variant.InteropID,
+				ProductInteropID: item.Product.InteropID
+			}, function (v) {
+				if (v.ProofUrl) {
+					window.location = v.ProofUrl;
+				}
+				else {
+					$scope.errorMessage = "Unable to download proof";
+				}
+			});
+		};
 
         $scope.onPrint = function()  {
 			window.print();
 		};
-	}]);
+	}
+]);
