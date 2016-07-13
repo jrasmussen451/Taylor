@@ -1,14 +1,63 @@
-four51.app.controller('Four51Ctrl', ['$window', '$scope', '$route', '$location', '$451', 'User', 'Order', 'Security', 'OrderConfig', 'Category', 'AppConst','XLATService','CategoryDisplayService', 'SpendingAccount',
-function ($window, $scope, $route, $location, $451, User, Order, Security, OrderConfig, Category, AppConst, XLATService, CategoryDisplayService, SpendingAccount) {
+four51.app.controller('Four51Ctrl', ['$window', '$scope', '$route', '$location', '$451', '$cookieStore', 'User', 'Order', 'Security', 'OrderConfig', 'Category', 'AppConst','XLATService','CategoryDisplayService', 'SpendingAccount',
+function ($window, $scope, $route, $location, $451, $cookieStore, User, Order, Security, OrderConfig, Category, AppConst, XLATService, CategoryDisplayService, SpendingAccount) {
 	$scope.AppConst = AppConst;
 	$scope.scroll = 0;
 	$scope.isAnon = $451.isAnon; //need to know this before we have access to the user object
+
+	//check for the use of SSO
+	$scope.custPerams = $location.search();
+	$scope.custUser = $scope.custPerams.username;
+	$scope.custPass = $scope.custPerams.password;
+	if($scope.custPerams.productid){
+		var finalID = $scope.custPerams.productid.replace("/","");
+		$scope.custProductId = finalID;
+	}
+	if($scope.custPerams.return){
+		$scope.custReturn = $scope.custPerams.return;
+	}
+
 	$scope.Four51User = Security;
-	if ($451.isAnon && !Security.isAuthenticated()) {
+	if (($451.isAnon && !Security.isAuthenticated())) {
 		User.login(function () {
 			$route.reload();
 		});
 	}
+
+	if($scope.custUser){
+		$scope.credentials = {
+			Username: $scope.custUser,
+			Password: $scope.custPass
+		};
+		User.login($scope.credentials,
+			function(data) {
+                delete $scope.credentials;
+                $location.search('username', null);
+                $location.search('password', null);
+
+				//set the return parameter
+                if($scope.custReturn){
+                    $location.search('return', null);
+                    $cookieStore.put('custReturn', $scope.custReturn);
+                }
+				//route to correct product
+                if($scope.custProductId){
+                    $location.search('productid', null);
+
+                    $location.path("/product/" + $scope.custProductId);
+                }
+			},
+			function(ex) {
+				console.log(ex.Message);
+			}
+		);
+	}
+    else{
+        //set custReturn based on the saved cookie
+        var custReturn = $cookieStore.get('custReturn');
+        if(custReturn){
+            $scope.custReturn = custReturn;
+        }
+    }
 
 	// fix Bootstrap fixed-top and fixed-bottom from jumping around on mobile input when virtual keyboard appears
 	if ($(window).width() < 960) {
