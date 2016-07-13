@@ -6,8 +6,11 @@ function ($routeParams, $sce, $scope, $451, $window, $location, $route, User, Se
             $location.path("/catalog");
             User.login();
         }
-        if($scope.custReturn){
+        else if($scope.custReturn){
             $window.location.href = $scope.custReturn;
+        }
+        else{
+            $window.location.href = "https://vzw.rbmfrontline.com/view/login";
         }
     };
 
