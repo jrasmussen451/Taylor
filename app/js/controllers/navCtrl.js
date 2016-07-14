@@ -1,10 +1,16 @@
-four51.app.controller('NavCtrl', ['$routeParams', '$sce', '$scope', '$451', '$location', '$route', 'User', 'Security', 'Category', 'Product',
-function ($routeParams, $sce, $scope, $451, $location, $route, User, Security, Category, Product) {
+four51.app.controller('NavCtrl', ['$routeParams', '$sce', '$scope', '$451', '$window', '$location', '$route', 'User', 'Security', 'Category', 'Product',
+function ($routeParams, $sce, $scope, $451, $window, $location, $route, User, Security, Category, Product) {
     $scope.Logout = function(){
         User.logout();
         if ($scope.isAnon) {
             $location.path("/catalog");
             User.login();
+        }
+        else if($scope.custReturn){
+            $window.location.href = $scope.custReturn;
+        }
+        else{
+            $window.location.href = "https://www.workflowoneaccess.com/customers/verizon";
         }
     };
 
