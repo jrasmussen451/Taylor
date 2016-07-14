@@ -10,7 +10,7 @@ function ($routeParams, $sce, $scope, $451, $window, $location, $route, User, Se
             $window.location.href = $scope.custReturn;
         }
         else{
-            $window.location.href = "https://vzw.rbmfrontline.com/view/login";
+            $window.location.href = "https://www.workflowoneaccess.com/customers/verizon";
         }
     };
 
