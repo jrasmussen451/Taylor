@@ -2,7 +2,7 @@
 Static file for Theme changes
 Theme name: Verizon Demo
 Version: 2.0
-Last Updated: 7/5/16
+Last Updated: 7/14/16
 Developers: Jen
 */
 
@@ -89,6 +89,16 @@ a:focus {
     background-color: #f2f2f2;
     border-color: #ccc;
     color: #666;
+}
+
+.login-message {
+    padding:15px 5px 0 5px;
+    border-top:1px solid #ccc;
+}
+
+.login-message h4 {
+    color:#A80309;
+    font-weight:bold;
 }
 /*login*/
 
@@ -1005,6 +1015,10 @@ a.list-group-item.active:focus .list-group-item-text {
 
 .panel-lineitem .quantity-total {
     background-color: #ffffff;
+}
+
+.panel-order-history .quantity-ordered {
+    padding-left:5px;
 }
 
 .panel-lineitem a {
