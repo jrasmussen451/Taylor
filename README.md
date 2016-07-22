@@ -1,5 +1,5 @@
 ##### Taylor Corp - Verizon  / 18.6.2 CT Release and 1.1.3 SPA Release  (1214)
-##### Last Update: 7/5/16
+##### Last Update: 7/22/16
 ========
 
 ### Github URL
@@ -278,6 +278,12 @@
 `js/filters.js`
 * Set the hidden category interop ID's / line 114
 
+`js/controllers/Four51Ctrl.js`
+* add custReturn fn - Accept query string for SSO and return / line 26-60
+
+`js/controllers/navCtrl.js`
+* add custReturn logout href / line 9-11
+
 `js/directives/categorydisplay.js`
 * Category Display / lines 1-11
 * Category Display Inline / lines 13-24
@@ -293,6 +299,9 @@
 * categoryDisplayService / lines 1-21
 * categoryliststree / lines 22-33
 * categorylistnode / lines 35-52
+
+`js/services/securityService.js`
+* remove $cookieStore for custReturn fn / line 29
 
 
 ##### html
@@ -319,6 +328,16 @@
 
 `partials/controls/categoryDisplayInline.html`
 * Category Display Inline
+
+`partials/controls/customSelectionField.html`
+* COMTOOLS-109 - wrapping the select in 'input-group' class causes misbehavior in IE / lines 5-6
+
+`partials/controls/login.html`
+* remove forgot password button / lines 51-53
+* add 'login-message' / lines 102-117
+
+`partials/controls/nav.html`
+* add custReturn fn to login href
 
 `partials/controls/orderSummary.html`
 * Collapsible Item Summary / lines 12-37
